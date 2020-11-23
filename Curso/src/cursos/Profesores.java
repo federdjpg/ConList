@@ -9,12 +9,14 @@ import Tabla.Tabla_ProductoVO2;
 import DAO.ProductoDAO2;
 import MySql.conexion;
 import VO.ProductoVO2;
+import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -64,7 +66,7 @@ public class Profesores extends javax.swing.JFrame {
 
         SDProfesor_Agregar = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        lblImagen = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         uploadImagen = new javax.swing.JButton();
         txtClave = new javax.swing.JTextField();
@@ -123,11 +125,11 @@ public class Profesores extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icono/btn_Agregar.png"))); // NOI18N
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icono/btn_Agregar.png"))); // NOI18N
+        lblImagen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
+                lblImagenMouseClicked(evt);
             }
         });
 
@@ -208,7 +210,7 @@ public class Profesores extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(uploadImagen)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(53, 431, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +226,7 @@ public class Profesores extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uploadImagen)
@@ -682,9 +684,9 @@ public class Profesores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel15MouseClicked
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+    private void lblImagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenMouseClicked
 
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_lblImagenMouseClicked
 
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
 
@@ -715,6 +717,11 @@ public class Profesores extends javax.swing.JFrame {
         if(s == JFileChooser.APPROVE_OPTION){
             String ruta = j.getSelectedFile().getAbsolutePath();
             txtRutaImagen.setText(ruta);
+            
+                        //visualizar imagen :)
+            Image foto = getToolkit().getImage(txtRutaImagen.getText());
+            foto = foto.getScaledInstance(200,200, Image.SCALE_DEFAULT);
+            lblImagen.setIcon(new ImageIcon(foto));
         }
     }//GEN-LAST:event_uploadImagenActionPerformed
 
@@ -805,7 +812,6 @@ public class Profesores extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -835,6 +841,7 @@ public class Profesores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblImagen;
     private javax.swing.JTable tablaProf;
     private javax.swing.JButton txtAddProfesor;
     private javax.swing.JTextField txtClave;
