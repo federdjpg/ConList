@@ -805,8 +805,15 @@ public class Cursadores extends javax.swing.JFrame {
         
         int s = j.showOpenDialog(this);
         if(s == JFileChooser.APPROVE_OPTION){
+           
             String ruta = j.getSelectedFile().getAbsolutePath();
             txtRutaImagen.setText(ruta);
+            
+            //visualizar imagen :)
+            Image foto = getToolkit().getImage(txtRutaImagen.getText());
+            foto = foto.getScaledInstance(200,200, Image.SCALE_DEFAULT);
+            lblImagen.setIcon(new ImageIcon(foto));
+            
         }
  
     }//GEN-LAST:event_btnAddImagenActionPerformed

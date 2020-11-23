@@ -12,7 +12,7 @@ public class ProductoDAO2 {
     public ArrayList<ProductoVO2> Listar_ProductoVO2() {
         ArrayList<ProductoVO2> list = new ArrayList<ProductoVO2>();
         conexion conec = new conexion();
-        String sql = "SELECT * FROM alumnos;";
+        String sql = "SELECT * FROM profesor;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         try {
