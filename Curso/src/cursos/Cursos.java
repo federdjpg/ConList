@@ -66,17 +66,17 @@ public final class Cursos extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        C_habilitado = new javax.swing.JCheckBox();
-        C_desa = new javax.swing.JCheckBox();
+        txtActivo = new javax.swing.JCheckBox();
+        txtDesactivo = new javax.swing.JCheckBox();
         jPanel14 = new javax.swing.JPanel();
         Btn_Agregar_Curso = new javax.swing.JButton();
-        txtAgregar_Clave = new javax.swing.JTextField();
-        txtAgregar_Nombre = new javax.swing.JTextField();
-        txtAgregar_Duracion = new javax.swing.JTextField();
-        txtAgregar_Precio = new javax.swing.JTextField();
-        txtAgregar_Vacantes = new javax.swing.JTextField();
-        txtAgregar_Fecha_i = new javax.swing.JTextField();
-        txtAgregar_Fecha_f = new javax.swing.JTextField();
+        txtClave = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtDuracion = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
+        txtVacante = new javax.swing.JTextField();
+        txtF_Inicial = new javax.swing.JTextField();
+        txtF_Final = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         SDEditar_Curso = new javax.swing.JDialog();
@@ -155,19 +155,19 @@ public final class Cursos extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel9.setText("Fecha inicial:");
 
-        C_habilitado.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        C_habilitado.setText("Habilitado");
-        C_habilitado.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtActivo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtActivo.setText("Habilitado");
+        txtActivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                C_habilitadoMouseClicked(evt);
+                txtActivoMouseClicked(evt);
             }
         });
 
-        C_desa.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        C_desa.setText("Deshabilitado");
-        C_desa.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtDesactivo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtDesactivo.setText("Deshabilitado");
+        txtDesactivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                C_desaMouseClicked(evt);
+                txtDesactivoMouseClicked(evt);
             }
         });
 
@@ -194,15 +194,15 @@ public final class Cursos extends javax.swing.JFrame {
             }
         });
 
-        txtAgregar_Clave.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtClave.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        txtAgregar_Nombre.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        txtAgregar_Duracion.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtDuracion.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        txtAgregar_Precio.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtPrecio.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
-        txtAgregar_Vacantes.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        txtVacante.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel25.setText("Fecha final:");
@@ -231,31 +231,31 @@ public final class Cursos extends javax.swing.JFrame {
                                             .addComponent(jLabel8)
                                             .addGap(148, 148, 148)
                                             .addComponent(jLabel6))
-                                        .addComponent(txtAgregar_Duracion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtDuracion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(188, 188, 188)))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtAgregar_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtAgregar_Clave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
-                                        .addComponent(txtAgregar_Nombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtAgregar_Vacantes, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addComponent(txtClave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtVacante, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(txtAgregar_Fecha_i, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtF_Inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jLabel9))
                                             .addGap(12, 12, 12)
                                             .addComponent(jLabel25))
-                                        .addComponent(txtAgregar_Fecha_f, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtF_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(C_habilitado, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jLabel26))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(C_desa, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtDesactivo, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                             .addGap(96, 96, 96)
                                             .addComponent(Btn_Agregar_Curso, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -272,37 +272,37 @@ public final class Cursos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAgregar_Clave, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(11, 11, 11)
-                .addComponent(txtAgregar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAgregar_Duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAgregar_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAgregar_Vacantes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtVacante, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAgregar_Fecha_i, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAgregar_Fecha_f, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtF_Inicial, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtF_Final, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(C_desa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(C_habilitado, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDesactivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Btn_Agregar_Curso)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -924,7 +924,7 @@ public final class Cursos extends javax.swing.JFrame {
             String[] registros = new String[8];
             SQL = "SELECT idCurso,Nombre,Duracion,Precio,Vacantes,Disponibilidad,Fecha_inicio,Fecha_final FROM cursos";
 
-           
+           model = new DefaultTableModel(null, titulos);
             Statement st = con.createStatement();
             rs = st.executeQuery(SQL);
             while (rs.next()) {
@@ -959,18 +959,18 @@ public final class Cursos extends javax.swing.JFrame {
             // model = new DefaultTableModel(null,titulos);
             Statement st = con.createStatement();
             rs = st.executeQuery(SQL);
-//            while (rs.next()) {
-//                r1 = rs.getString("idCurso");
-//                r2 = rs.getString("Nombre");
-//                r3 = rs.getString("Duracion");
-//                r4 = rs.getString("Precio");
-//                r5 = rs.getString("Vacantes");
-//                r6 = rs.getString("Disponibilidad");
-//                r7 = rs.getString("Fecha_inicio");
-//                r8 = rs.getString("Fecha_final");
-//
-//                
-//            }
+            while (rs.next()) {
+                r1 = rs.getString("idCurso");
+                r2 = rs.getString("Nombre");
+                r3 = rs.getString("Duracion");
+                r4 = rs.getString("Precio");
+                r5 = rs.getString("Vacantes");
+                r6 = rs.getString("Disponibilidad");
+                r7 = rs.getString("Fecha_inicio");
+                r8 = rs.getString("Fecha_final");
+
+                
+            }
                o[0] = rs.getString("idCurso");
                 o[1] = rs.getString("Nombre");
                 o[2] = rs.getString("Duracion");
@@ -1013,24 +1013,45 @@ public final class Cursos extends javax.swing.JFrame {
 
     //Metodo para agregar usuarios
     public void AgregarUsuario() {
+        
+//        
+//        int clave = Integer.parseInt(txt.getText());
+//        String nombre  = txtNombre.getText().toUpperCase();
+//        String telefono = txtDuracion.getText().toUpperCase();
+//        String correo = txtPrecio.getText().toUpperCase();
+//        String tipo = txtPrecio.getText().toUpperCase();
+//        String perfil = txtPerfil.getText();
+//        
+//        File imagen = new File(txtRutaImagen.getText());
+//        
+//        
+//  this.agregar(clave, nombre, correo, telefono, perfil, tipo, imagen);
+//  clearData();
+//        t.visualizar_ProductoVO(tabla);
+        
+        
+        
+        
+        
+        
         try {
             SQL = "INSERT INTO cursos (idCurso, Nombre, Duracion, Precio, Vacantes, Fecha_inicio, Fecha_final, Disponibilidad) VALUES (?,?,?,?,?,?,?,?)";
 
             ps = con.prepareStatement(SQL);
 
-            ps.setString(1, txtAgregar_Clave.getText());
-            ps.setString(2, txtAgregar_Nombre.getText());
-            ps.setString(3, txtAgregar_Duracion.getText());
-            ps.setString(4, txtAgregar_Precio.getText());
-            ps.setString(5, txtAgregar_Vacantes.getText());
-            ps.setString(6, txtAgregar_Fecha_i.getText());
-            ps.setString(7, txtAgregar_Fecha_f.getText());
+            ps.setString(1, txtClave.getText());
+            ps.setString(2, txtNombre.getText());
+            ps.setString(3, txtDuracion.getText());
+            ps.setString(4, txtPrecio.getText());
+            ps.setString(5, txtVacante.getText());
+            ps.setString(6, txtF_Inicial.getText());
+            ps.setString(7, txtF_Final.getText());
 
-            if (C_habilitado.isSelected()) {
-                ps.setString(8, C_habilitado.getText());
+            if (txtActivo.isSelected()) {
+                ps.setString(8, txtActivo.getText());
             }
-            if (C_desa.isSelected()) {
-                ps.setString(8, C_desa.getText());
+            if (txtDesactivo.isSelected()) {
+                ps.setString(8, txtDesactivo.getText());
             }
             //ps.setString(8, txtAgregar_PrimerasEntradas.getText());
 
@@ -1123,14 +1144,14 @@ public final class Cursos extends javax.swing.JFrame {
     }
 
     public void Limpiar() {
-        txtAgregar_Clave.setText("");
+        txtClave.setText("");
 
-        txtAgregar_Nombre.setText("");
-        txtAgregar_Duracion.setText("");
-        txtAgregar_Precio.setText("");
-        txtAgregar_Vacantes.setText("");
-        txtAgregar_Fecha_i.setText("");
-        txtAgregar_Fecha_f.setText("");
+        txtNombre.setText("");
+        txtDuracion.setText("");
+        txtPrecio.setText("");
+        txtVacante.setText("");
+        txtF_Inicial.setText("");
+        txtF_Final.setText("");
 
         txtEdit_Nombre.setText("");
         txtEdit_Duracion.setText("");
@@ -1138,8 +1159,8 @@ public final class Cursos extends javax.swing.JFrame {
         txtEdit_Vacantes.setText("");
         Check1.setSelected(false);
         Check2.setSelected(false);
-        C_habilitado.setSelected(false);
-        C_desa.setSelected(false);
+        txtActivo.setSelected(false);
+        txtDesactivo.setSelected(false);
     }
 
     //METODO PARA FILTRAR EN LA TABLA DE  SOW DIALOG##########################################################################################################
@@ -1194,17 +1215,17 @@ public final class Cursos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Check2MouseClicked
 
-    private void C_habilitadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C_habilitadoMouseClicked
-        if (C_habilitado.isSelected()) {
-            C_desa.setSelected(false);
+    private void txtActivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtActivoMouseClicked
+        if (txtActivo.isSelected()) {
+            txtDesactivo.setSelected(false);
         }
-    }//GEN-LAST:event_C_habilitadoMouseClicked
+    }//GEN-LAST:event_txtActivoMouseClicked
 
-    private void C_desaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C_desaMouseClicked
-        if (C_desa.isSelected()) {
-            C_habilitado.setSelected(false);
+    private void txtDesactivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDesactivoMouseClicked
+        if (txtDesactivo.isSelected()) {
+            txtActivo.setSelected(false);
         }
-    }//GEN-LAST:event_C_desaMouseClicked
+    }//GEN-LAST:event_txtDesactivoMouseClicked
 
     private void btnAsignarProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarProfActionPerformed
         // TODO add your handling code here:
@@ -1270,8 +1291,6 @@ public final class Cursos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Agregar_Curso;
     private javax.swing.JButton Btn_Editar;
-    private javax.swing.JCheckBox C_desa;
-    private javax.swing.JCheckBox C_habilitado;
     private javax.swing.JCheckBox Check1;
     private javax.swing.JCheckBox Check2;
     private javax.swing.JDialog SDAgregar_Curso;
@@ -1326,19 +1345,21 @@ public final class Cursos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField txtAgregar_Clave;
-    private javax.swing.JTextField txtAgregar_Duracion;
-    private javax.swing.JTextField txtAgregar_Fecha_f;
-    private javax.swing.JTextField txtAgregar_Fecha_i;
-    private javax.swing.JTextField txtAgregar_Nombre;
-    private javax.swing.JTextField txtAgregar_Precio;
-    private javax.swing.JTextField txtAgregar_Vacantes;
+    private javax.swing.JCheckBox txtActivo;
     private javax.swing.JTextField txtBuscarCurso;
     private javax.swing.JTextField txtBuscarProf;
+    private javax.swing.JTextField txtClave;
+    private javax.swing.JCheckBox txtDesactivo;
+    private javax.swing.JTextField txtDuracion;
     private javax.swing.JTextField txtEdit_Duracion;
     private javax.swing.JTextField txtEdit_Nombre;
     private javax.swing.JTextField txtEdit_Precio;
     private javax.swing.JTextField txtEdit_Vacantes;
+    private javax.swing.JTextField txtF_Final;
+    private javax.swing.JTextField txtF_Inicial;
+    private javax.swing.JTextField txtNombre;
     private javax.swing.JLabel txtNombreCurso;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtVacante;
     // End of variables declaration//GEN-END:variables
 }

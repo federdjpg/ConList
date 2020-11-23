@@ -1,0 +1,13 @@
+ git init-> iniciar repositorio
+git status-> ver los cambios que hemos hecho o creado un archivo nuevo
+git add * -> agrega todos los archivos
+git commit -m "comentario" -> comentario para ver lo que hemos hecho
+git log -> ver nuestros commit
+
+git branch hola -> crear un usuario nuevo
+git checkout hola -> cambiar de usuario
+
+git pull - > descargar actualizaciones del sistema
+git push origin checko o dependiendo de la rama - > clonar repositorio
+
+git remote add origin htts://github.com/federdjpg/ConList.git ->listo
