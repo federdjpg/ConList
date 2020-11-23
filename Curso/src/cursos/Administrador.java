@@ -5,18 +5,37 @@
  */
 package cursos;
 
+import MySql.conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Osvaldo
  */
 public class Administrador extends javax.swing.JFrame {
+    conexion cn = new conexion();
+    Connection con = cn.getConnection();
 
     /**
      * Creates new form Administrador
      */
     public Administrador() {
         initComponents();
+        setVisible(true);
     }
+    PreparedStatement ps;
+    ResultSet rs;
+    String SQL;
+    DefaultTableModel model;
+    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,6 +46,23 @@ public class Administrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SDagregarAdmin = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        Btn_Agregar_Admin = new javax.swing.JButton();
+        txtAgregarClaveAdmin = new javax.swing.JTextField();
+        txtAgregarUsuario = new javax.swing.JTextField();
+        txtAgregarPassword = new javax.swing.JTextField();
+        txtAgregarNombre = new javax.swing.JTextField();
+        txtAgregarTelefono = new javax.swing.JTextField();
+        txtAgregarCorreo = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,6 +85,150 @@ public class Administrador extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setFocusable(false);
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Agregar Administrador");
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel7.setText("Usuario:");
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel8.setText("Clave del Administrador:");
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel9.setText("Nombre:");
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel13.setText("Telefono:");
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel14.setText("Password:");
+
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel20.setText("Correo:");
+
+        jPanel14.setBackground(new java.awt.Color(0, 153, 0));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        Btn_Agregar_Admin.setBackground(new java.awt.Color(0, 153, 0));
+        Btn_Agregar_Admin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        Btn_Agregar_Admin.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_Agregar_Admin.setText("Agregar");
+        Btn_Agregar_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Agregar_AdminActionPerformed(evt);
+            }
+        });
+
+        txtAgregarClaveAdmin.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        txtAgregarUsuario.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        txtAgregarPassword.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        txtAgregarNombre.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        txtAgregarTelefono.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel20)
+                                    .addComponent(txtAgregarTelefono)
+                                    .addComponent(txtAgregarCorreo)
+                                    .addComponent(jLabel9)
+                                    .addComponent(txtAgregarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtAgregarPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtAgregarClaveAdmin, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtAgregarUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(Btn_Agregar_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(154, 154, 154))))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAgregarClaveAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addGap(11, 11, 11)
+                .addComponent(txtAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAgregarPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAgregarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAgregarTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtAgregarCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(Btn_Agregar_Admin)
+                .addContainerGap(17, Short.MAX_VALUE))
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout SDagregarAdminLayout = new javax.swing.GroupLayout(SDagregarAdmin.getContentPane());
+        SDagregarAdmin.getContentPane().setLayout(SDagregarAdminLayout);
+        SDagregarAdminLayout.setHorizontalGroup(
+            SDagregarAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SDagregarAdminLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        SDagregarAdminLayout.setVerticalGroup(
+            SDagregarAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SDagregarAdminLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -58,7 +238,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Regitro de Administradores");
+        jLabel1.setText("Registro de Administradores");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,9 +340,8 @@ public class Administrador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,7 +465,45 @@ public class Administrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+//si se pudo
+       //Metodo para agregar usuarios
+    public void AgregarUsuario() {
+        try {
+            SQL = "INSERT INTO cursos (idCurso, Nombre, Duracion, Precio, Vacantes, Fecha_inicio, Fecha_final, Disponibilidad) VALUES (?,?,?,?,?,?,?,?)";
 
+            ps = con.prepareStatement(SQL);
+
+            ps.setString(1, txtAgregarClaveAdmin.getText());
+            ps.setString(2, txtAgregarUsuario.getText());
+            ps.setString(3, txtAgregarPassword.getText());
+            ps.setString(4, txtAgregarNombre.getText());
+            ps.setString(5, txtAgregarTelefono.getText());
+            ps.setString(6, txtAgregarCorreo.getText());
+
+        
+            int res = ps.executeUpdate();
+            if (res > 0) {
+
+                //JOptionPane.showMessageDialog(null,"SE AGREGO EL CURSO");
+                //visualizar();
+                //Limpiar();
+                //SDAgregar_Curso.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "NO SE AGREGO EL CURSO");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cursos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
+    
+    
+    
+    
+    
+    
+    
+    
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel17MouseClicked
@@ -306,6 +523,10 @@ public class Administrador extends javax.swing.JFrame {
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void Btn_Agregar_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Agregar_AdminActionPerformed
+        AgregarUsuario();
+    }//GEN-LAST:event_Btn_Agregar_AdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,26 +564,43 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Agregar_Admin;
+    private javax.swing.JDialog SDagregarAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtAgregarClaveAdmin;
+    private javax.swing.JTextField txtAgregarCorreo;
+    private javax.swing.JTextField txtAgregarNombre;
+    private javax.swing.JTextField txtAgregarPassword;
+    private javax.swing.JTextField txtAgregarTelefono;
+    private javax.swing.JTextField txtAgregarUsuario;
     // End of variables declaration//GEN-END:variables
 }
